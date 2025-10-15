@@ -11,9 +11,9 @@
             <h4 class="mb-0">{{ $book->id ? 'Edit Book' : 'Create Book' }}</h4>
         </div>
         <div class="card-body">
-            {{-- Formulario --}}
+
             <form method="POST" 
-                  action="{{ $book->id ? route('books.update', $book->id) : route('books.store') }}">
+                action="{{ $book->id ? route('books.update', $book->id) : route('books.store') }}">
                 @csrf
                 @if($book->id)
                     @method('PUT')
@@ -22,7 +22,6 @@
                 <div class="row padding-1 p-1">
                     <div class="col-md-12">
 
-                        {{-- Title --}}
                         <div class="form-group mb-3">
                             <label for="title" class="form-label">Title</label>
                             <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
@@ -30,7 +29,7 @@
                             {!! $errors->first('title', '<div class="invalid-feedback">:message</div>') !!}
                         </div>
 
-                        {{-- Year --}}
+
                         <div class="form-group mb-3">
                             <label for="year" class="form-label">Year</label>
                             <input type="text" name="year" class="form-control @error('year') is-invalid @enderror"
@@ -38,7 +37,7 @@
                             {!! $errors->first('year', '<div class="invalid-feedback">:message</div>') !!}
                         </div>
 
-                        {{-- Author --}}
+
                         <div class="form-group mb-3">
                             <label for="author_id" class="form-label">Author</label>
                             <select name="author_id" id="author_id" class="form-control @error('author_id') is-invalid @enderror">
@@ -55,7 +54,7 @@
 
                     </div>
 
-                    {{-- Submit Button --}}
+
                     <div class="col-md-12 mt-3">
                         <button type="submit" class="btn btn-primary">
                             {{ $book->id ? 'Update' : 'Submit' }}

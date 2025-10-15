@@ -24,6 +24,7 @@ class AuthorRequest extends FormRequest
         return [
 			'name' => 'required|string',
 			'nationality' => 'required|string',
+            //esto ya estaba creado ;) gracias a los comandos, !Larga vida a Laravel¡
         ];
     }
 }

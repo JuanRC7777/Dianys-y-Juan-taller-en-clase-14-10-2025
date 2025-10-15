@@ -60,7 +60,7 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-         $book = Book::findOrFail($id);
+        $book = Book::findOrFail($id);
         $authors = Author::all();
 
         return view('book.edit', compact('book', 'authors'));
